@@ -1,5 +1,6 @@
-# Then install globally:
+```bash
 npm install -g .
 
-# Now use from anywhere:
 mdpreview README.md
+```
+
