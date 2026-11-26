@@ -25,6 +25,15 @@ app.get('/', (req, res) => {
   <meta charset="UTF-8">
   <title>MD Preview</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown.min.css">
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+<!-- Common programming languages -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/bash.min.js"></script>
   <style>
 html, body {
     background-color: #000 !important;
@@ -60,6 +69,7 @@ body {
 .markdown-body pre {
     border: 1px solid #333;
     border-radius: 6px;
+    padding: 16px;
 }
 
 .markdown-body code {
@@ -69,10 +79,25 @@ body {
 </head>
 <body class="markdown-body">
   <div id="content">${html}</div>
-  <script>
+<script>
     const ws = new WebSocket('ws://localhost:3000');
-    ws.onmessage = e => document.getElementById('content').innerHTML = e.data;
-  </script>
+
+    function highlightCode() {
+        document.querySelectorAll('#content pre code').forEach(block => {
+            hljs.highlightElement(block);
+        });
+    }
+
+    // Highlight initial content
+    highlightCode();
+
+    // Update and highlight whenever Markdown changes
+    ws.onmessage = e => {
+        document.getElementById('content').innerHTML = e.data;
+        highlightCode();
+    };
+</script>
+
 </body>
 </html>`);
 });
