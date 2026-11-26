@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
   <meta charset="UTF-8">
   <title>MD Preview</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown.min.css">
-  <style>body{max-width:800px;margin:40px auto;padding:0 20px}</style>
+  <style>body{background-color:"black";max-width:800px;margin:40px auto;padding:0 20px}</style>
 </head>
 <body class="markdown-body">
   <div id="content">${html}</div>
