@@ -50,6 +50,21 @@ body {
 .markdown-body blockquote {
     color: #fff;
 }
+.markdown-body pre,
+.markdown-body pre code,
+.markdown-body code {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.markdown-body pre {
+    border: 1px solid #333;
+    border-radius: 6px;
+}
+
+.markdown-body code {
+    border-radius: 4px;
+}
 </style>
 </head>
 <body class="markdown-body">
