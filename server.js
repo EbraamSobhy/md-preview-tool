@@ -75,6 +75,59 @@ body {
 .markdown-body code {
     border-radius: 4px;
 }
+/* Markdown tables */
+.markdown-body table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background: #000 !important;
+    border: 1px solid #333 !important;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* Table header */
+.markdown-body table th {
+    background: #161616 !important;
+    color: #fff !important;
+    font-weight: 600;
+    padding: 12px 16px;
+    border: 1px solid #333 !important;
+    text-align: left;
+}
+
+/* Table cells */
+.markdown-body table td {
+    background: #000 !important;
+    color: #ddd !important;
+    padding: 12px 16px;
+    border: 1px solid #333 !important;
+}
+
+/* Hover effect */
+.markdown-body table tr:hover td {
+    background: #111 !important;
+}
+
+/* Bold text inside tables */
+.markdown-body table strong {
+    color: #fff;
+}
+
+/* Links inside tables */
+.markdown-body table a {
+    color: #58a6ff;
+}
+
+/* Inline code inside tables */
+.markdown-body table code {
+    background: #1a1a1a !important;
+    color: #c792ea !important;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
 </style>
 </head>
 <body class="markdown-body">
