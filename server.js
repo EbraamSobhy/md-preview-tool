@@ -25,7 +25,32 @@ app.get('/', (req, res) => {
   <meta charset="UTF-8">
   <title>MD Preview</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.5.0/github-markdown.min.css">
-  <style>body{background-color:"black";max-width:800px;margin:40px auto;padding:0 20px}</style>
+  <style>
+html, body {
+    background-color: #000 !important;
+    min-height: 100%;
+}
+
+body {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.markdown-body {
+    background-color: #000 !important;
+    color: #fff;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body p,
+.markdown-body li,
+.markdown-body blockquote {
+    color: #fff;
+}
+</style>
 </head>
 <body class="markdown-body">
   <div id="content">${html}</div>
